@@ -1,0 +1,34 @@
+#!/usr/bin/env python
+import time
+import argparse
+from flyt_python import api as sp
+
+drone = sp.navigation(timeout=110000)  ##instance class
+
+
+
+
+parser = argparse.ArgumentParser(description='Process a float value.')## parsing command line arguments while typing file address we can enter the side length in command line
+parser.add_argument('side', metavar='side_length', type=float, help='side length of the square')
+args = parser.parse_args()
+
+time.sleep(5) ## sleep time of drone to initialize properly
+
+
+side_length = args.side
+
+
+print ("taking off!")
+drone.take_off(5.0)
+
+print ("flying in square", side_length)
+drone.position_set(side_length, 0, 0, relative=True)## sending position value from the command line for square lining
+drone.position_set(0, side_length, 0, relative=True)
+drone.position_set(-side_length, 0, 0, relative=True)
+drone.position_set(0, -side_length, 0, relative=True)
+
+print ("landing")
+drone.land(False)
+print ("Landed safely!!")
+
+drone.disconnect() ##disconnecting and shutting down the drone
