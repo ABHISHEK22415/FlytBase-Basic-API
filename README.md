@@ -9,7 +9,7 @@ Following API's are used:
 2.Position set point from navigation API  to initaite the particular waypoints in its system
 3.And at the shutdown API
 While executing code in command prompt user need to input the length for the square
-Height of takeoff is predefined in the code as 5m (it should be grater than 1.5)
+Height of takeoff is predefined in the code as 5m 
 Then save the python code file to a desired location to use in openshell command.
 
 Steps for meeting software requirement:
