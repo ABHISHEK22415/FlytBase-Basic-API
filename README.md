@@ -18,7 +18,7 @@ Steps for meeting software requirement:
 
 
 stepwise commands to be run in the command prompt
-1.sudo ./start.sh
+1.sudo ./start.sh.
 2.sudo ./openshell.sh
 3.Entering the python file location and the side of square.
 4. sudo ./stop.sh
